@@ -16,7 +16,9 @@ function calculateRentalCost(days) {
     totalCost -= weekendDiscount;
 
     return totalCost;
-  } else if (days >= maximumDiscountDays) {
+  }
+
+  if (days >= maximumDiscountDays) {
     totalCost -= weeklyDiscount;
 
     return totalCost;
