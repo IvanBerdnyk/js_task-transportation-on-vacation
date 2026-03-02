@@ -7,13 +7,19 @@ function calculateRentalCost(days) {
   const dailyCost = 40;
   const weeklyDiscount = 50;
   const weekendDiscount = 20;
+  const minimumDiscountDays = 3;
+  const maximumDiscountDays = 7;
 
   let totalCost = days * dailyCost;
 
-  if (days >= 3 && days < 7) {
+  if (days >= minimumDiscountDays && days < maximumDiscountDays) {
     totalCost -= weekendDiscount;
-  } else if (days >= 7) {
+
+    return totalCost;
+  } else if (days >= maximumDiscountDays) {
     totalCost -= weeklyDiscount;
+
+    return totalCost;
   }
 
   return totalCost;
